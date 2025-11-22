@@ -1,0 +1,200 @@
+version: "3.1"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - saludo
+  - despedida
+  - agradecimiento
+  - afirmacion
+  - negacion
+  - ayuda
+  - enviar_carnet       # cuando el usuario envíe la foto del carnet
+  - describir_problema  # cuando describa el problema después de elegir categoría
+  - reportar_incidente  # lo usaremos para activar el flujo de incidente
+  - fuera_de_alcance
+
+entities: []
+
+slots:
+  authenticated:
+    type: bool
+    initial_value: false
+    influence_conversation: true
+    mappings:
+      - type: custom   # lo setearemos desde una acción personalizada
+
+  employee_code:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  employee_name:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  branch_number:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: custom
+
+  categoria:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: incidente_form
+            requested_slot: categoria
+
+  subcategoria:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: incidente_form
+            requested_slot: subcategoria
+
+  descripcion:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: incidente_form
+            requested_slot: descripcion
+
+  ticket_id:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+forms:
+  incidente_form:
+    required_slots:
+      - categoria
+      - subcategoria
+      - descripcion
+
+responses:
+
+  # --- Flujo de autenticación por carnet ---
+  utter_pedir_carnet:
+    - text: "Hola 👋, soy el asistente de Soporte Técnico. Para continuar necesito validar tu identidad. Por favor, envíame una foto de tu carnet corporativo."
+
+  utter_autenticacion_fallida:
+    - text: "No he podido validar tus datos con el carnet enviado. Por favor, verifica la imagen o contacta a soporte por los canales habituales."
+
+  utter_bienvenida_autenticado:
+    - text: "Hola {employee_name} (código {employee_code}) de la sucursal {branch_number} 👋. Selecciona la categoría que mejor describe tu problema."
+
+  # --- Categorías y subcategorías ---
+  utter_ask_categoria:
+    - text: "Selecciona la categoría de tu problema:"
+      buttons:
+        - title: "Monitor / Pantalla"
+          payload: "monitor"
+        - title: "Case / CPU / Computadora"
+          payload: "computadora"
+        - title: "Digitalizadora / Scanner - Financieras"
+          payload: "scannersfin"
+        - title: "Digitalizadora / Scanner - Cajas"
+          payload: "scannercaja"
+        - title: "Impresora Térmica / Bixolon"
+          payload: "impresora_termica"
+        - title: "Impresora Láser / Lexmark"
+          payload: "impresora_laser"
+        - title: "Periféricos / Dispositivos"
+          payload: "periferico"
+        - title: "Internet / Red"
+          payload: "internet"
+        - title: "Sistema / Software"
+          payload: "software"
+        - title: "Otros"
+          payload: "otro"
+
+  # Ejemplo para subcategorías de periféricos (luego podemos añadir más por categoría)
+  utter_ask_subcategoria:
+    - text: "¿Qué dispositivo está presentando el problema?"
+      buttons:
+        - title: "Teclado"
+          payload: "teclado"
+        - title: "Mouse"
+          payload: "mouse"
+        - title: "Lector de huellas"
+          payload: "finger"
+        - title: "Lector de DPI"
+          payload: "lector_dpi"
+        - title: "Cámara web"
+          payload: "camara_web"
+        - title: "Pad de firmas (Topaz)"
+          payload: "topaz"
+        - title: "Pin pad numérico"
+          payload: "pinpad"
+        - title: "No aplica / Otro"
+          payload: "no_aplica"
+
+  # --- Descripción del problema ---
+  utter_ask_descripcion:
+    - text: "Descríbeme brevemente qué está ocurriendo, por favor."
+
+  # --- Preguntar si se solucionó ---
+  utter_preguntar_si_se_soluciono:
+    - text: "¿El problema se solucionó con los pasos anteriores?"
+      buttons:
+        - title: "Sí, ya se solucionó ✅"
+          payload: "/afirmacion"
+        - title: "No, sigue el problema ❌"
+          payload: "/negacion"
+
+  utter_despedida_incidente_resuelto:
+    - text: "Perfecto, me alegra que se haya solucionado 🙌. Si necesitas algo más, vuelve a escribirme."
+
+  utter_ticket_creado:
+    - text: "He generado el ticket {ticket_id} con la información de tu incidente. Un técnico dará seguimiento lo antes posible."
+
+  # --- Respuestas generales que ya usabas ---
+  utter_saludo:
+    - text: "Hola 👋, soy el asistente de Soporte Técnico."
+
+  utter_despedida:
+    - text: "Gracias por contactarnos. ¡Que tengas buen día! 👋"
+
+  utter_agradecimiento:
+    - text: "Con gusto, para eso estoy 😊"
+
+  utter_ayuda:
+    - text: "Puedo ayudarte a reportar problemas de software y hardware en sucursales. Por ejemplo: POS, impresoras, internet, equipos de cómputo. Cuéntame qué está pasando."
+
+  utter_fuera_de_alcance:
+    - text: "Por ahora solo puedo ayudarte con temas de soporte técnico de sucursales (equipos, impresoras, internet, sistemas). ¿Qué problema tienes allí?"
+
+  utter_ofrecer_otro_incidente:
+    - text: "¿Deseas consultar o reportar otro problema?"
+      buttons:
+        - title: "Sí, otro problema"
+          payload: "/afirmacion"
+        - title: "No, gracias"
+          payload: "/negacion"
+
+  utter_despedida_final:
+    - text: "¡Perfecto! Si necesitas algo más, estaré aquí para ayudarte. 👋"
+
+actions:
+  - action_hello_world
+  - action_confirmar_reporte
+  # Más adelante agregaremos:
+  - action_verificar_identidad
+  # - action_proponer_solucion_incidente
+  # - action_crear_ticket
+  - validate_incidente_form
+  - action_reset_incidente
+  - action_start_nuevo_incidente
