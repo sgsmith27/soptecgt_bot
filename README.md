@@ -111,14 +111,14 @@ requirements.txt
 
 README.md
 
+# Arquitectura del sistema
+
+
+
+<img width="948" height="1326" alt="ARQUITECTURA GENERAL" src="https://github.com/user-attachments/assets/6fa2c14a-bd66-46b2-862d-b29d906a5faa" />
 
 # Autor
 Sergio G. Smith
 
 Dec 2025
-
-UG
-
-<img width="948" height="1326" alt="ARQUITECTURA GENERAL" src="https://github.com/user-attachments/assets/6fa2c14a-bd66-46b2-862d-b29d906a5faa" />
-
 
