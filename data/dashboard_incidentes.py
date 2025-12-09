@@ -12,20 +12,17 @@ INCIDENTES_CSV = os.path.join(PROJECT_ROOT, "data", "incidentes_soptecgt.csv")
 @st.cache_data
 def cargar_incidentes():
     """Carga el CSV de incidentes en un DataFrame."""
-    # 1) Si no existe el archivo, devolvemos un DataFrame vacío
+    
     if not os.path.exists(INCIDENTES_CSV):
         st.warning("Aún no hay incidentes registrados en el archivo CSV.")
         return pd.DataFrame()
-
-    # 2) Cargar el CSV
+    
     df = pd.read_csv(INCIDENTES_CSV)
-
-    # 3) Si está vacío, también devolvemos vacío
+    
     if df.empty:
         st.warning("Aún no hay incidentes registrados en el archivo CSV.")
         return df
-
-    # 4) Normalizar columnas esperadas
+    
     columnas_esperadas = [
         "fecha",
         "hora",
@@ -42,8 +39,7 @@ def cargar_incidentes():
     for col in columnas_esperadas:
         if col not in df.columns:
             df[col] = ""
-
-    # 5) Convertir fecha y crear columna combinada fecha_hora
+    
     df["fecha"] = pd.to_datetime(df["fecha"], errors="coerce").dt.date
     df["fecha_hora"] = pd.to_datetime(
         df["fecha"].astype(str) + " " + df["hora"].astype(str),
