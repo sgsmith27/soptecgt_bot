@@ -119,5 +119,6 @@ Dec 2025
 
 UG
 
-![Arquitectura]([URL_que_copiaste](https://github.com/sgsmith27/soptecgt_bot/blob/746f41d65f6305eb00f04967f051cf47e4c2fce9/ARQUITECTURA%20GENERAL.png))
+<img width="948" height="1326" alt="ARQUITECTURA GENERAL" src="https://github.com/user-attachments/assets/6fa2c14a-bd66-46b2-862d-b29d906a5faa" />
+
 
