@@ -49,7 +49,6 @@ rules:
     steps:
       - action: incidente_form
       - active_loop: null
-      # Aquí el formulario ya llenó categoria, subcategoria, descripcion
       - action: action_sugerir_solucion_incidente
       #- action: utter_preguntar_si_se_soluciono
 
@@ -94,7 +93,6 @@ rules:
     - action: action_confirmar_reporte
     - action: utter_ofrecer_otro_incidente
 
-# El usuario dice que SÍ se solucionó con la respuesta LLM de 'otros'
   - rule: Problema de categoria otros solucionado con LLM
     condition:
     - slot_was_set:
@@ -103,8 +101,6 @@ rules:
     - intent: afirmacion
     - action: action_end_conversation
     
-
-# El usuario dice que NO se solucionó con la respuesta LLM de 'otros'
   - rule: Problema de categoria otros NO se solucionó con LLM
     condition:
     - slot_was_set:
