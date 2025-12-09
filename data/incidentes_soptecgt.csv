@@ -1,0 +1,30 @@
+fecha,hora,sucursal,nombre_sucursal,empleado,codigo_empleado,categoria,subcategoria,descripcion,ticket_id,estado
+2025-12-03,08:59:53,291,EKT HUEHUE CENTRO,SERGIO GEOVANY GARCIA SMITH,383266,Case / CPU / Computadora,No especificada,Computadora no enciende,INC000001,Abierto
+2025-12-03,09:00:57,DEK CUILCO,HUEHUETENANGO,ROSBYN OTONIEL CIFUENTES,388373,Digitalizadora / Scanner - Financieras,No especificada,El escaner jala las hojas pero no se ven en la compu,INC000002,Abierto
+2025-12-03,18:39:29,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Monitor / Pantalla,No especificada,Monitor no muestra imagen,INC000003,Abierto
+2025-12-04,07:05:27,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Digitalizadora / Scanner - Financieras,No especificada,No esta jalando las hojas,INC000004,Abierto
+2025-12-04,07:11:32,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Otros,No especificada,Mi planta telefónica no recibe llamadas,INC000005,Abierto
+2025-12-04,07:22:50,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Otros,No especificada,Mi planta telefonica no saca llamadas,INC000006,Abierto
+2025-12-04,07:44:52,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Case / CPU / Computadora,No especificada,Computadora no enciende,INC000007,Abierto
+2025-12-04,07:46:31,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Digitalizadora / Scanner - Financieras,No especificada,No jala las hojas,INC000008,Abierto
+2025-12-04,07:52:28,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Digitalizadora / Scanner - Financieras,No especificada,No jala las hojas,INC000009,Abierto
+2025-12-04,07:53:13,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Case / CPU / Computadora,No especificada,Mi computadora no da imagen,INC000010,Abierto
+2025-12-04,08:22:46,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Otros,No especificada,Mi planta telefónica no recibe llamadas,INC000011,Abierto
+2025-12-04,08:42:44,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Periféricos / Dispositivos,Teclado,Mi teclado no funciona,INC000012,Abierto
+2025-12-04,09:01:00,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Monitor / Pantalla,No especificada,La pantalla no enciende,INC000013,Abierto
+2025-12-04,17:56:54,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Periféricos / Dispositivos,Teclado,Teclado no escribe,INC000014,Abierto
+2025-12-04,17:58:33,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Periféricos / Dispositivos,Teclado,Teclado no escribe,INC000015,Abierto
+2025-12-04,18:50:29,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Case / CPU / Computadora,No especificada,Computadora enciende pero no da video,INC000016,Abierto
+2025-12-04,19:02:28,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Case / CPU / Computadora,No especificada,Computadora enciende pero no da video,INC000017,Abierto
+2025-12-04,19:03:44,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Periféricos / Dispositivos,Lector de huellas,Lector de huella no funciona,INC000018,Abierto
+2025-12-04,19:05:15,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Digitalizadora / Scanner - Financieras,No especificada,No jala los hojas,INC000019,Abierto
+2025-12-04,19:05:54,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Case / CPU / Computadora,No especificada,Mi computadora no enciende,INC000020,Abierto
+2025-12-04,19:46:44,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Case / CPU / Computadora,No especificada,Mi computadora no enciende,INC000021,Abierto
+2025-12-05,01:45:23,5721,"DEK CUILCO, HUEHUETENANGO",NELIDA SARAI MORALES BERNARDO,81589,Case / CPU / Computadora,No especificada,Computadora no enciende,INC000022,Abierto
+2025-12-05,02:11:56,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Case / CPU / Computadora,No especificada,Mi Computadora enciende pero no da imagen,INC000023,Abierto
+2025-12-05,03:03:40,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Case / CPU / Computadora,No especificada,Computadora no enciende,INC000024,Abierto
+2025-12-05,03:07:08,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Digitalizadora / Scanner - Financieras,No especificada,No jalas las hojas,INC000025,Abierto
+2025-12-05,03:10:03,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Monitor / Pantalla,No especificada,Mi monitor no enciende pero no da imagen,INC000026,Abierto
+2025-12-05,03:17:47,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Case / CPU / Computadora,No especificada,Mi computadora no enciende,INC000027,Abierto
+2025-12-05,03:21:03,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Monitor / Pantalla,No especificada,Monitor no da imagen,INC000028,Abierto
+2025-12-05,03:35:29,291,EKT HUEHUE,SERGIO GEOVANY GARCIA SMITH,383266,Case / CPU / Computadora,No especificada,Computadora no enciende,INC000029,Abierto

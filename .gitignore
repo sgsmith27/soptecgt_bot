@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+
+# Rasa
+models/
+*.db
+*.sqlite3
+.rasa/
+results/
+conversation_logs/
+logs/
+
+# Local configs
+*.env
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# DeepEval cache
+.deepeval/
+
+# Streamlit
+.streamlit/
+
+# VSCode
+.vscode/

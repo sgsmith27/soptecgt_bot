@@ -97,3 +97,30 @@ nlu:
     - el sistema se queda cargando
     - el teclado no responde
     - el mouse se congela
+
+- intent: ver_mas_pasos
+  examples: |
+    - ver más pasos
+    - mostrar más pasos
+    - dame más pasos
+    - quiero ver más pasos
+    - muéstrame más opciones
+    - otras alternativas
+    - intentar otra cosa
+
+- intent: levantar_reporte
+  examples: |
+    - levantar reporte
+    - abrir ticket
+    - registra el incidente
+    - no funcionó, levanta el reporte
+    - no funcionó, abre un incidente
+    - quiero que lo vea soporte
+
+- intent: incidente_solucionado
+  examples: |
+    - ya se solucionó
+    - el problema ya está resuelto
+    - ya funciona bien
+    - ya no tengo el problema
+    - ya se arregló

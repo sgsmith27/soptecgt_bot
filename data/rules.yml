@@ -42,22 +42,79 @@ rules:
       - action: incidente_form
       - active_loop: incidente_form
 
-  #--Finalizar formulario con opcion de abrir un nuevo reporte
-  - rule: finalizar formulario de incidente
+  # --- Al completar el formulario: usar RAG y preguntar si se solucionó ---
+  - rule: sugerir solución con RAG al completar formulario
     condition:
       - active_loop: incidente_form
     steps:
       - action: incidente_form
       - active_loop: null
+      # Aquí el formulario ya llenó categoria, subcategoria, descripcion
+      - action: action_sugerir_solucion_incidente
+      #- action: utter_preguntar_si_se_soluciono
+
+  # --- Respuesta del usuario a "¿se solucionó?" ---
+
+  - rule: usuario indica que el problema se solucionó
+    steps:
+      - action: utter_preguntar_si_se_soluciono
+      - intent: afirmacion
+      - action: action_end_conversation
+
+  - rule: usuario indica que el problema NO se solucionó
+    steps:
+      - action: utter_preguntar_si_se_soluciono
+      - intent: negacion
       - action: action_confirmar_reporte
       - action: utter_ofrecer_otro_incidente
 
+  # --- Respuesta del usuario a "¿Deseas consultar o reportar otro problema?" ---
+
   - rule: usuario quiere reportar otro incidente
     steps:
+      - action: utter_ofrecer_otro_incidente
       - intent: afirmacion
       - action: action_start_nuevo_incidente
 
   - rule: usuario no quiere reportar otro incidente
     steps:
+      - action: utter_ofrecer_otro_incidente
       - intent: negacion
-      - action: utter_despedida_final
+      - action: action_end_conversation
+
+
+  - rule: Ver más pasos de solución desde KB
+    steps:
+    - intent: ver_mas_pasos
+    - action: action_mostrar_mas_pasos_rag
+
+  - rule: Levantar reporte directamente
+    steps:
+    - intent: levantar_reporte
+    - action: action_confirmar_reporte
+    - action: utter_ofrecer_otro_incidente
+
+# El usuario dice que SÍ se solucionó con la respuesta LLM de 'otros'
+  - rule: Problema de categoria otros solucionado con LLM
+    condition:
+    - slot_was_set:
+        - flujo_otros_llm: true
+    steps:
+    - intent: afirmacion
+    - action: action_end_conversation
+    
+
+# El usuario dice que NO se solucionó con la respuesta LLM de 'otros'
+  - rule: Problema de categoria otros NO se solucionó con LLM
+    condition:
+    - slot_was_set:
+        - flujo_otros_llm: true
+    steps:
+    - intent: negacion
+    - action: action_confirmar_reporte
+    - action: utter_ofrecer_otro_incidente
+
+  - rule: cliente indica que el incidente se solucionó
+    steps:
+      - intent: incidente_solucionado
+      - action: action_end_conversation

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Computadora no enciende",
+    "answer_relevancy": 0.0,
+    "contextual_relevancy": 0.0,
+    "faithfulness": 1.0
+  },
+  {
+    "name": "Monitor pantalla negra",
+    "answer_relevancy": 0.0,
+    "contextual_relevancy": 0.9,
+    "faithfulness": 1.0
+  },
+  {
+    "name": "Impresora térmica no imprime",
+    "answer_relevancy": 0.0,
+    "contextual_relevancy": 0.9,
+    "faithfulness": 1.0
+  },
+  {
+    "name": "Scanner no jala hojas",
+    "answer_relevancy": 0.0,
+    "contextual_relevancy": 0.0,
+    "faithfulness": 1.0
+  }
+]
