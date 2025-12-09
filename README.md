@@ -60,37 +60,63 @@ streamlit run dashboard_incidentes.py
 python evaluate_rag.py
 
 Evaluación Automática (DeepEval)
+
 El proyecto incluye un script evaluate_rag.py que mide:
+
 Answer Relevancy
+
 Contextual Relevancy
+
 Faithfulness
+
 Utilizando DeepEval y un conjunto de casos de prueba definidos.
+
 Los resultados permiten comparar arquitecturas (RAG estándar / Self-query / etc).
+
 
 # Estructura del Proyecto
 /actions.py
+
 /domain.yml
+
 /nlu.yml
+
 /rules.yml
+
 /config.yml
+
 /endpoints.yml
 
+
 /rag_engine.py
+
 /rag_index.py
+
 /kb_index_meta.json
+
 /base_conocimiento/*.md
 
+
 /telegram_bridge.py
+
 /dashboard_incidentes.py
 
+
 /evaluate_rag.py
+
 /manual_evaluate_rag.py
 
+
 requirements.txt
+
 README.md
+
 
 # Autor
 Sergio G. Smith
+
 Dec 2025
+
 UG
+
 
