@@ -33,8 +33,6 @@ Se incluye además una base de conocimiento en formato `.md` estructurada por ca
 # Puesta en Marcha
 
 ## 1. Crear entorno virtual
-
-```bash
 python3 -m venv venv
 source venv/bin/activate
 
@@ -69,7 +67,7 @@ Faithfulness
 Utilizando DeepEval y un conjunto de casos de prueba definidos.
 Los resultados permiten comparar arquitecturas (RAG estándar / Self-query / etc).
 
-#Estructura del Proyecto
+# Estructura del Proyecto
 /actions.py
 /domain.yml
 /nlu.yml
@@ -93,4 +91,6 @@ README.md
 
 # Autor
 Sergio G. Smith
+Dec 2025
+UG
 
