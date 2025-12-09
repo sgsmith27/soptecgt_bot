@@ -1,0 +1,23 @@
+rasa==3.6.15
+rasa-sdk==3.6.1
+
+# LLMs y evaluación
+openai>=1.3.0
+deepeval>=2.0.0
+
+# Embeddings y RAG
+sentence-transformers==2.7.0
+numpy
+scikit-learn
+
+# Interface y visualización
+streamlit
+
+# Utilidades
+python-dotenv
+requests
+pydantic
+regex
+
+# Telegram
+python-telegram-bot==13.15
