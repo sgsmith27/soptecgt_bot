@@ -33,7 +33,7 @@ BUTTON_INTENT_MAP = {
     "Generar reporte": "/levantar_reporte",
 }
 
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "7475824252:AAGXHqXeEKx3IWg6W9WNs4HRaO35NmJIvpY")
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "TOKEN AQUI")
 RASA_REST_URL = "http://localhost:5005/webhooks/rest/webhook"
 LOG_DIR = "logs"
 CONV_LOG_PATH = os.path.join(LOG_DIR, "conversation_events.jsonl")
@@ -489,3 +489,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
